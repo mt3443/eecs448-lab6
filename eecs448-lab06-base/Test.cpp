@@ -60,11 +60,11 @@ bool Test::testSearchOnEmptyList(int value) {
 bool Test::testSearchWhenValueIsFirst(int value) {
 	LinkedListOfInts list;
 	
-	list.addFront(value);
-	
 	for(int i = 0; i < 30; i++) {
-		list.addBack(i);
+		list.addFront(i);
 	}
+	
+	list.addFront(value);
 	
 	return list.search(value) == true;
 }
@@ -72,11 +72,11 @@ bool Test::testSearchWhenValueIsFirst(int value) {
 bool Test::testSearchWhenValueIsLast(int value) {
 	LinkedListOfInts list;
 	
-	for(int i = 0; i < 30; i++) {
-		list.addBack(i);
-	}
+	list.addFront(value);
 	
-	list.addBack(value);
+	for(int i = 0; i < 30; i++) {
+		list.addFront(i);
+	}
 	
 	return list.search(value) == true;
 }
