@@ -1,0 +1,5 @@
+List of bugs, EECS 448 Lab 6
+
+1. isEmpty() returns true when list is not empty
+2. removeFront() and removeBack() do not decrease the m_size variable
+3. addBack() adds elements to the front of the list, not the back
