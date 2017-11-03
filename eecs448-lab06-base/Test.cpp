@@ -91,6 +91,16 @@ bool Test::testSearch(int value) {
 	return list.search(value) == true;
 }
 
+bool Test::testSearchWhenValueNotPresent() {
+	LinkedListOfInts list;
+	
+	for(int i = 0; i < 100; i++) {
+		list.addFront(i);
+	}
+	
+	return list.search(3000) == false;
+}
+
 bool Test::testSizeAfterRemoveFront(int value) {
 	LinkedListOfInts list;
 	
@@ -190,23 +200,25 @@ void Test::runTests() {
 	testPassed(testSizeAfterAddBack(10000));
 	std::cout << "Test 8. search returns false when searching an empty list: ";
 	testPassed(testSearchOnEmptyList(50));
-	std::cout << "Test 9. search returns true when value is at the front of the list: ";
+	std::cout << "Test 9. search returns false on populated list when value is not in list: ";
+	testPassed(testSearchWhenValueNotPresent());
+	std::cout << "Test 10. search returns true when value is at the front of the list: ";
 	testPassed(testSearchWhenValueIsFirst(50));
-	std::cout << "Test 10. search returns true when value is at the back of the list: ";
+	std::cout << "Test 11. search returns true when value is at the back of the list: ";
 	testPassed(testSearchWhenValueIsLast(50));
-	std::cout << "Test 11. search returns true when value is in the middle of the list: ";
+	std::cout << "Test 12. search returns true when value is in the middle of the list: ";
 	testPassed(testSearch(50));
-	std::cout << "Test 12. size returns correct value after 1 removeFront: ";
+	std::cout << "Test 13. size returns correct value after 1 removeFront: ";
 	testPassed(testSizeAfterRemoveFront(1));
-	std::cout << "Test 13. size returns correct value after 1 removeBack: ";
+	std::cout << "Test 14. size returns correct value after 1 removeBack: ";
 	testPassed(testSizeAfterRemoveBack(1));
-	std::cout << "Test 14. size returns correct value after 10000 removeFronts: ";
+	std::cout << "Test 15. size returns correct value after 10000 removeFronts: ";
 	testPassed(testSizeAfterRemoveFront(10000));
-	std::cout << "Test 15. size returns correct value after 10000 removeBacks: ";
+	std::cout << "Test 16. size returns correct value after 10000 removeBacks: ";
 	testPassed(testSizeAfterRemoveBack(10000));
-	std::cout << "Test 16. elements added using addFront are in correct order: ";
+	std::cout << "Test 17. elements added using addFront are in correct order: ";
 	testPassed(testAddFrontOrder());
-	std::cout << "Test 17. elements added using addBack are in correct order: ";
+	std::cout << "Test 18. elements added using addBack are in correct order: ";
 	testPassed(testAddBackOrder());
 	
 	

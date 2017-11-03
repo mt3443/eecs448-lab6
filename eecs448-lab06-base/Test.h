@@ -16,6 +16,7 @@ class Test {
 	bool testSearchWhenValueIsFirst(int value);
 	bool testSearchWhenValueIsLast(int value);
 	bool testSearch(int value);
+	bool testSearchWhenValueNotPresent();
 	bool testSizeAfterRemoveFront(int value);
 	bool testSizeAfterRemoveBack(int value);
 	bool testAddFrontOrder();
